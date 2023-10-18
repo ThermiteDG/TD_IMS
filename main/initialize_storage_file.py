@@ -27,7 +27,7 @@ class initialize_storage_file:
                     "5x20x1": [20, 20, 0],
                     "5x15x1": [20, 20, 0],
                     "5x10x1": [20, 20, 0],
-                    "5x5x1": [20, 20, 0],
+                    "5x5x1": [20, 20, 0]
             },
             "Steel_C_Channels_Whole_Length": {
                     "2x25x1": [20, 20, 0],
@@ -51,4 +51,25 @@ class initialize_storage_file:
                     "2x25x2 or smaller": [40, 40, 0],
                     "5x25x1 or smaller": [40, 40, 0]
             },
+            "Cut_Steel_C_Channels": {
+                    "2x25x1 or smaller": [40, 40, 0],
+                    "2x25x2 or smaller": [40, 40, 0],
+                    "5x25x1 or smaller": [40, 40, 0]
+            },
+            "Omniwheels": {
+                "4in": [40, 40, 0],
+                "3.25in": [40, 40, 0],
+                "2.75in": [40, 40, 0]
+
+            },
+            "Tractionwheels": {
+                "4in": [40, 40, 0],
+                "3.25in": [40, 40, 0],
+                "2.75in": [40, 40, 0]
+            },
+            "Mechanumwheels": {
+                "4in": [40, 40, 0],
+                "2in": [40, 40, 0]
+            }
         }
+        jsonPath = "Currentinventory.json"
