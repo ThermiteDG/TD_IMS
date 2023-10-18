@@ -4,14 +4,18 @@ import io
 import os
 import fileinput
 import filecmp
+from hashlib import sha256
 
 
 class initialize_storage_file:
+    jsonPath = "currentInventory.json"
+    desfilePath = "desFile.json"
+
     def generate_json_file():
         #Important note for changes to the dictionary setup:
         #All parts are the name of a matrix that displays total amount of that part how many are in stock and how many are out of stock
         #That looks like "WxLxH": [Total, In, Out]
-        dict = {
+        currentinventory_dict = {
             "Aluminum_C_Channels_Whole_Length": {
                     "2x25x1": [20, 20, 0],
                     "2x20x1": [20, 20, 0],
@@ -72,4 +76,29 @@ class initialize_storage_file:
                 "2in": [40, 40, 0]
             }
         }
-        jsonPath = "Currentinventory.json"
+
+        desfile_dict ={
+            
+        }
+
+    def writeJSONdesfile(id, subsequentData):
+        new_dic = {id : {subsequentData}}
+        with open(desfilePath,'w') as outfile:
+            json.dump(new_dic, outfile)
+
+    def translate_csv_to_json(csvFile):
+        pwjsonArray = []
+        with open(csvFile, encoding='utf-8') as csvf:
+            #load csv file data
+            csvIn = csv.DictReader(csvf)
+        
+        #convert to pydict
+        for row in csvIn:
+            pwjsonArray.append(row)
+
+        #generate id for new object
+        inDat = input(csvFile)
+        outDat = sha256(inDat.encode('utf-8').hexdigest)
+
+        #write to desFile with sha256 id
+        writeJSONdesfile(outDat, pwjsonArray)
