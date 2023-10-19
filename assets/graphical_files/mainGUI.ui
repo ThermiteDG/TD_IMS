@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>865</width>
+    <height>613</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>861</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>859</width>
+       <height>569</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>865</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuActions">
+    <property name="title">
+     <string>Design Actions</string>
+    </property>
+    <widget class="QMenu" name="menuGenerate_BOM">
+     <property name="title">
+      <string>Generate BOM</string>
+     </property>
+     <addaction name="actionGenerate_as_CSV"/>
+     <addaction name="actionGenerate_as_Text"/>
+    </widget>
+    <addaction name="actionUpload_CSV"/>
+    <addaction name="menuGenerate_BOM"/>
+   </widget>
+   <widget class="QMenu" name="menuSystem_Actions">
+    <property name="title">
+     <string>System Actions</string>
+    </property>
+    <addaction name="actionPurge_Old_Files"/>
+    <addaction name="actionPull_Log_Files"/>
+    <addaction name="actionCheck_System_Resources"/>
+    <addaction name="actionCheck_For_Update"/>
+   </widget>
+   <widget class="QMenu" name="menuOrder_Request_Form">
+    <property name="title">
+     <string>Order Request Form</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuOrder_Status">
+    <property name="title">
+     <string>Order Status</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuInventory_Actions">
+    <property name="title">
+     <string>Inventory Actions</string>
+    </property>
+    <widget class="QMenu" name="menuChange_Part_Count">
+     <property name="title">
+      <string>Change Part Count </string>
+     </property>
+     <addaction name="actionManually"/>
+     <addaction name="actionUsing_BOM"/>
+     <addaction name="actionUsing_CSV"/>
+    </widget>
+    <widget class="QMenu" name="menuUpdate_Part_Types">
+     <property name="title">
+      <string>Update Part Types</string>
+     </property>
+     <addaction name="actionFrom_Json_Array_File"/>
+     <addaction name="actionFrom_CSV_File"/>
+     <addaction name="actionManually_not_recommended_unless_you_know_Json"/>
+    </widget>
+    <addaction name="actionUpdate_Inventory"/>
+    <addaction name="actionSearch_For_Part"/>
+    <addaction name="menuChange_Part_Count"/>
+    <addaction name="menuUpdate_Part_Types"/>
+   </widget>
+   <addaction name="menuActions"/>
+   <addaction name="menuSystem_Actions"/>
+   <addaction name="menuOrder_Request_Form"/>
+   <addaction name="menuOrder_Status"/>
+   <addaction name="menuInventory_Actions"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionUpload_CSV">
+   <property name="text">
+    <string>Upload CSV</string>
+   </property>
+  </action>
+  <action name="actionDownload_CSV">
+   <property name="text">
+    <string>Download CSV</string>
+   </property>
+  </action>
+  <action name="actionGenerate_as_CSV">
+   <property name="text">
+    <string>Generate as CSV</string>
+   </property>
+  </action>
+  <action name="actionGenerate_as_Text">
+   <property name="text">
+    <string>Generate as Text</string>
+   </property>
+  </action>
+  <action name="actionPurge_Old_Files">
+   <property name="text">
+    <string>Purge Old Files</string>
+   </property>
+  </action>
+  <action name="actionPull_Log_Files">
+   <property name="text">
+    <string>Pull Log Files</string>
+   </property>
+  </action>
+  <action name="actionCheck_System_Resources">
+   <property name="text">
+    <string>Check System Resources</string>
+   </property>
+  </action>
+  <action name="actionCheck_For_Update">
+   <property name="text">
+    <string>Check For Update</string>
+   </property>
+  </action>
+  <action name="actionUpdate_Inventory">
+   <property name="text">
+    <string>Update Inventory</string>
+   </property>
+  </action>
+  <action name="actionSearch_For_Part">
+   <property name="text">
+    <string>Search For Part</string>
+   </property>
+  </action>
+  <action name="actionManually">
+   <property name="text">
+    <string>Manually</string>
+   </property>
+  </action>
+  <action name="actionUsing_BOM">
+   <property name="text">
+    <string>Using BOM</string>
+   </property>
+  </action>
+  <action name="actionUsing_CSV">
+   <property name="text">
+    <string>Using CSV</string>
+   </property>
+  </action>
+  <action name="actionFrom_Json_Array_File">
+   <property name="text">
+    <string>From Json Array/File</string>
+   </property>
+  </action>
+  <action name="actionFrom_CSV_File">
+   <property name="text">
+    <string>From CSV File</string>
+   </property>
+  </action>
+  <action name="actionManually_not_recommended_unless_you_know_Json">
+   <property name="text">
+    <string>Manually (not recommended unless you know Json)</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
