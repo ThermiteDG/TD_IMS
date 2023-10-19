@@ -11,6 +11,8 @@ class storage_file_manipulation:
     
     def generate_files():
         deslockPath = deslockPath
+        desfilePath = desfilePath
+        jsonPath = jsonPath
         #Important note for changes to the dictionary setup:
         #All parts are the name of a matrix that displays total amount of that part how many are in stock and how many are out of stock
         #That looks like "WxLxH": [Total, In, Out]
@@ -90,6 +92,14 @@ class storage_file_manipulation:
         with open(deslockPath, 'x') as file:
             file.write("initialize")
         file.close()
+
+        with open(desfilePath, 'x') as file0:
+            json.dump(desfile_dict, file0)
+        file0.close()
+        
+        with open(jsonPath, 'x') as file1:
+            json.dump(currentinventory_dict, file1)
+        file1.close()
         
 
     def writeJSONdesfile(id, subsequentData):
