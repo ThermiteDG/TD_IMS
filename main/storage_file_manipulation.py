@@ -1,18 +1,16 @@
 import json
 import csv
-import io
-import os
-import fileinput
-import filecmp
 from hashlib import sha256
 
 
 class storage_file_manipulation:
+
     jsonPath = "currentInventory.json"
     desfilePath = "desFile.json"
     deslockPath = "deslock.txt"
-
+    
     def generate_files():
+        deslockPath = deslockPath
         #Important note for changes to the dictionary setup:
         #All parts are the name of a matrix that displays total amount of that part how many are in stock and how many are out of stock
         #That looks like "WxLxH": [Total, In, Out]
@@ -95,6 +93,7 @@ class storage_file_manipulation:
         
 
     def writeJSONdesfile(id, subsequentData):
+        desfilePath = desfilePath
         #write with sha256 id and the relevant json array data
         new_dic = {id : {subsequentData}}
         with open(desfilePath,'w') as outfile:
@@ -102,6 +101,7 @@ class storage_file_manipulation:
         outfile.close()
 
     def translate_csv_to_json(csvFile):
+        deslockPath = deslockPath
         pwjsonArray = []
         with open(csvFile, encoding='utf-8') as csvf:
             #load csv file data
@@ -116,7 +116,7 @@ class storage_file_manipulation:
         outDat = sha256(inDat.encode('utf-8').hexdigest)
 
         #write to desFile with sha256 id
-        writeJSONdesfile(outDat, pwjsonArray)
+        storage_file_manipulation.writeJSONdesfile(outDat, pwjsonArray)
         with open(deslockPath, 'a') as outfile:
             outfile.write(outDat + ", " + csvFile)
         outfile.close()
