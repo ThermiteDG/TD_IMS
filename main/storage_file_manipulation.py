@@ -5,14 +5,14 @@ from hashlib import sha256
 
 class storage_file_manipulation:
 
-    jsonPath = "currentInventory.json"
-    desfilePath = "desFile.json"
-    deslockPath = "deslock.txt"
+    jsonPath = "./assets/files/currentInventory.json"
+    desfilePath = "./assets/files/desFile.json"
+    deslockPath = "./assets/files/deslock.txt"
     
     def generate_files():
-        deslockPath = deslockPath
-        desfilePath = desfilePath
-        jsonPath = jsonPath
+        deslockPath = storage_file_manipulation.deslockPath
+        desfilePath = storage_file_manipulation.desfilePath
+        jsonPath = storage_file_manipulation.jsonPath
         #Important note for changes to the dictionary setup:
         #All parts are the name of a matrix that displays total amount of that part how many are in stock and how many are out of stock
         #That looks like "WxLxH": [Total, In, Out]
@@ -89,21 +89,22 @@ class storage_file_manipulation:
             
         }
 
+
         with open(deslockPath, 'x') as file:
             file.write("initialize")
         file.close()
 
         with open(desfilePath, 'x') as file0:
-            json.dump(desfile_dict, file0)
+            json.dump(desfile_dict, file0, indent=4)
         file0.close()
         
         with open(jsonPath, 'x') as file1:
-            json.dump(currentinventory_dict, file1)
+            json.dump(currentinventory_dict, file1, indent=4)
         file1.close()
         
 
     def writeJSONdesfile(id, subsequentData):
-        desfilePath = desfilePath
+        desfilePath = storage_file_manipulation.desfilePath
         #write with sha256 id and the relevant json array data
         new_dic = {id : {subsequentData}}
         with open(desfilePath,'w') as outfile:
@@ -111,7 +112,7 @@ class storage_file_manipulation:
         outfile.close()
 
     def translate_csv_to_json(csvFile):
-        deslockPath = deslockPath
+        deslockPath = storage_file_manipulation.deslockPath
         pwjsonArray = []
         with open(csvFile, encoding='utf-8') as csvf:
             #load csv file data
