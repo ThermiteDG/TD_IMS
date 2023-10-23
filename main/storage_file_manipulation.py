@@ -68,18 +68,18 @@ class storage_file_manipulation:
                     "2x25x2 or smaller": [40, 40, 0],
                     "5x25x1 or smaller": [40, 40, 0]
             },
-            "Omniwheels": {
+            "Omni_wheels": {
                 "4in": [40, 40, 0],
                 "3.25in": [40, 40, 0],
                 "2.75in": [40, 40, 0]
 
             },
-            "Tractionwheels": {
+            "Traction_wheels": {
                 "4in": [40, 40, 0],
                 "3.25in": [40, 40, 0],
                 "2.75in": [40, 40, 0]
             },
-            "Mechanumwheels": {
+            "Mechanum_wheels": {
                 "4in": [40, 40, 0],
                 "2in": [40, 40, 0]
             }
