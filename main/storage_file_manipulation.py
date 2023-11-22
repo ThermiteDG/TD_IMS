@@ -17,71 +17,102 @@ class storage_file_manipulation:
         #All parts are the name of a matrix that displays total amount of that part how many are in stock and how many are out of stock
         #That looks like "WxLxH": [Total, In, Out]
         currentinventory_dict = {
-            "Aluminum_C_Channels_Whole_Length": {
-                    "2x25x1": [20, 20, 0],
-                    "2x20x1": [20, 20, 0],
-                    "2x15x1": [20, 20, 0],
-                    "2x10x1": [20, 20, 0],
-                    "2x5x1": [20, 20, 0],
-                    "2x25x2": [20, 20, 0],
-                    "2x20x2": [20, 20, 0],
-                    "2x15x2": [20, 20, 0],
-                    "2x10x2": [20, 20, 0],
-                    "2x5x2": [20, 20, 0],
-                    "5x25x1": [20, 20, 0],
-                    "5x20x1": [20, 20, 0],
-                    "5x15x1": [20, 20, 0],
-                    "5x10x1": [20, 20, 0],
-                    "5x5x1": [20, 20, 0]
+            "Build_materials": {
+                "Aluminum_C_Channels_Whole_Length": {
+                        "2x25x1": [20, 20, 0],
+                        "2x20x1": [20, 20, 0],
+                        "2x15x1": [20, 20, 0],
+                        "2x10x1": [20, 20, 0],
+                        "2x5x1": [20, 20, 0],
+                        "2x25x2": [20, 20, 0],
+                        "2x20x2": [20, 20, 0],
+                        "2x15x2": [20, 20, 0],
+                        "2x10x2": [20, 20, 0],
+                        "2x5x2": [20, 20, 0],
+                        "5x25x1": [20, 20, 0],
+                        "5x20x1": [20, 20, 0],
+                        "5x15x1": [20, 20, 0],
+                        "5x10x1": [20, 20, 0],
+                        "5x5x1": [20, 20, 0]
+                },
+                "Steel_C_Channels_Whole_Length": {
+                        "2x25x1": [20, 20, 0],
+                        "2x20x1": [20, 20, 0],
+                        "2x15x1": [20, 20, 0],
+                        "2x10x1": [20, 20, 0],
+                        "2x5x1": [20, 20, 0],
+                        "2x25x2": [20, 20, 0],
+                        "2x20x2": [20, 20, 0],
+                        "2x15x2": [20, 20, 0],
+                        "2x10x2": [20, 20, 0],
+                        "2x5x2": [20, 20, 0],
+                        "5x25x1": [20, 20, 0],
+                        "5x20x1": [20, 20, 0],
+                        "5x15x1": [20, 20, 0],
+                        "5x10x1": [20, 20, 0],
+                        "5x5x1": [20, 20, 0]
+                },
+                "Aluminum_L_Channel": {
+                        "2x25x2": [20, 20, 0],
+                        "2x20x2": [20, 20, 0],
+                        "2x15x2": [20, 20, 0],
+                        "2x10x2": [20, 20, 0],
+                        "2x5x2": [20, 20, 0]
+                },
+                "Cut_Aluminum_C_Channels": {
+                        "2x25x1 or smaller": [40, 40, 0],
+                        "2x25x2 or smaller": [40, 40, 0],
+                        "5x25x1 or smaller": [40, 40, 0]
+                },
+                "Cut_Steel_C_Channels": {
+                        "2x25x1 or smaller": [40, 40, 0],
+                        "2x25x2 or smaller": [40, 40, 0],
+                        "5x25x1 or smaller": [40, 40, 0]
+                }
             },
-            "Steel_C_Channels_Whole_Length": {
-                    "2x25x1": [20, 20, 0],
-                    "2x20x1": [20, 20, 0],
-                    "2x15x1": [20, 20, 0],
-                    "2x10x1": [20, 20, 0],
-                    "2x5x1": [20, 20, 0],
-                    "2x25x2": [20, 20, 0],
-                    "2x20x2": [20, 20, 0],
-                    "2x15x2": [20, 20, 0],
-                    "2x10x2": [20, 20, 0],
-                    "2x5x2": [20, 20, 0],
-                    "5x25x1": [20, 20, 0],
-                    "5x20x1": [20, 20, 0],
-                    "5x15x1": [20, 20, 0],
-                    "5x10x1": [20, 20, 0],
-                    "5x5x1": [20, 20, 0]
+            "Wheel_items": {
+                "Omni_wheels": {
+                    "4in": [40, 40, 0],
+                    "3.25in": [40, 40, 0],
+                    "2.75in": [40, 40, 0]
+                },
+                "Traction_wheels": {
+                    "4in": [40, 40, 0],
+                    "3.25in": [40, 40, 0],
+                    "2.75in": [40, 40, 0]
+                },
+                "Mechanum_wheels": {
+                    "4in": [40, 40, 0],
+                    "2in": [40, 40, 0]
+                }
             },
-            "Aluminum_L_Channel": {
-                    "2x25x2": [20, 20, 0],
-                    "2x20x2": [20, 20, 0],
-                    "2x15x2": [20, 20, 0],
-                    "2x10x2": [20, 20, 0],
-                    "2x5x2": [20, 20, 0]
-            },
-            "Cut_Aluminum_C_Channels": {
-                    "2x25x1 or smaller": [40, 40, 0],
-                    "2x25x2 or smaller": [40, 40, 0],
-                    "5x25x1 or smaller": [40, 40, 0]
-            },
-            "Cut_Steel_C_Channels": {
-                    "2x25x1 or smaller": [40, 40, 0],
-                    "2x25x2 or smaller": [40, 40, 0],
-                    "5x25x1 or smaller": [40, 40, 0]
-            },
-            "Omni_wheels": {
-                "4in": [40, 40, 0],
-                "3.25in": [40, 40, 0],
-                "2.75in": [40, 40, 0]
-
-            },
-            "Traction_wheels": {
-                "4in": [40, 40, 0],
-                "3.25in": [40, 40, 0],
-                "2.75in": [40, 40, 0]
-            },
-            "Mechanum_wheels": {
-                "4in": [40, 40, 0],
-                "2in": [40, 40, 0]
+            "Pneumatic_items": {
+                "Pneumatic_cylinders": {
+                    "75mm_cylinder": [0, 0, 0],
+                    "50mm_cylinder": [0, 0, 0],
+                    "25mm_cylinder": [0, 0, 0]
+                },
+                "Air_tank_200mL": [3, 0, 3],
+                "Pressure_regulation": {
+                    "Air_Pressure_Gauge": [2, 0, 2],
+                    "Air_Pressure_Regulator": [2, 0, 2],
+                    "Air_Pressure_Regulator_Mounting_Bracket": [2, 0, 2]
+                },
+                "Tubing_Cutter": [1, 1, 0],
+                "Solenoids": [4, 4, 0],
+                "Fittings": {
+                    "Shut_Off_Valve_Fitting": [3, 0, 30],
+                    "Elbow_Fittings": [],
+                    "Tee_Fittings": [],
+                    "Air_Flow_Valve_Fittings": [],
+                    "Straight_Male_Fittings": [],
+                    "Straight_Female_Fittings": [],
+                    "Valve_Stem": []
+                },
+                "Tubing&Plugs": {
+                    "4mm_Plugs": [10, 0, 10],
+                    "4mm_Tubing": [10, 0, 10]
+                }
             }
         }
 
