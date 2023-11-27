@@ -1,0 +1,11 @@
+body {
+    font-family: 'Ubuntu', monospace;
+    background-color: #e2e2e2;
+    color: #303030;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: rgb(179, 80, 0);
+}

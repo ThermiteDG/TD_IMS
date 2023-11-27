@@ -116,7 +116,7 @@ class storage_file_manipulation:
             }
         }
 
-        desfile_dict ={
+        desfile_dict = {
             
         }
 
