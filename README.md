@@ -1,5 +1,5 @@
 # TD_IMS
- Python program to keep inventory of Vex parts for robots.
+ Python program to keep inventory of Vex parts for robots, but it can be modified for anything.
 ## Dependency Script
  Script to verify the install of integral packages using apt & pip as this program is designed to run on a Ubuntu enabled SBC.
 ## How are things measured in the JSON file?
