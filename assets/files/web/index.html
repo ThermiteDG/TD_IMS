@@ -7,13 +7,20 @@
         <title>Upload/Download + Documentation</title>
         <link rel="stylesheet" href="./styles.css">
     </head>
-    <h1>Upload/Download</h1>
     <body>
-        <form action="./main.js">
-            <input type="file" id="myFile" name="filename">
-            <input type="submit">
-        </form>
+        <div>
+            <h1>Upload/Download</h1>
+            <form id="csvUploadForm">
+                <input type="csv" name="fileName" value="this"/>
+                Select file to upload: <input type="file" name="Select"/>
+                <input type="submit" id="btn" />
+            </form>
+        </div>
+        <div>
+            <h1>Documentation</h1>
+            <a href="./pages/documentation.html">Documentation</a>
+        </div>
+
+        <script src="main.js"></script>
     </body>
-    <h1>Documentation</h1>
-    <a href="./pages/documentation.html">Documentation</a>
 </html>
