@@ -9,16 +9,22 @@
     </head>
     <body>
         <div>
-            <h1>Upload/Download</h1>
+            <h1>Upload</h1>
             <form id="csvUploadForm">
-                <input type="csv" name="fileName" value="this"/>
-                Select file to upload: <input type="file" name="Select"/>
+                <input type="csv" name="fileName" value="Name_of_file_no_spaces" id="inpName"/>
+                Select file to upload: <input type="file" name="Select" id="specFile"/>
                 <input type="submit" id="btn" />
             </form>
         </div>
         <div>
-            <h1>Documentation</h1>
-            <a href="./pages/documentation.html">Documentation</a>
+            <h1>Download</h1>
+            <form>
+                <input name="fileName" value="Name_of_file_no_spaces" id="oupName"/>
+                <input type="submit" id="btn2"/>
+            </form>
+        </div>
+        <div>
+            <h1><a href="./pages/documentation.html">Documentation</a></h1>
         </div>
 
         <script src="main.js"></script>
