@@ -1,5 +1,6 @@
 import json
 import csv
+import subprocess
 from hashlib import sha256
 
 
@@ -68,72 +69,71 @@ class storage_file_manipulation:
                         "2x25x1 or smaller": [40, 40, 0],
                         "2x25x2 or smaller": [40, 40, 0],
                         "5x25x1 or smaller": [40, 40, 0]
-                }
-            },
-            "Wheel_items": {
-                "Omni_wheels": {
-                    "4in": [40, 40, 0],
-                    "3.25in": [40, 40, 0],
-                    "2.75in": [40, 40, 0]
                 },
-                "Traction_wheels": {
-                    "4in": [40, 40, 0],
-                    "3.25in": [40, 40, 0],
-                    "2.75in": [40, 40, 0]
+                "Wheel_items": {
+                    "Omni_wheels": {
+                        "4in": [40, 40, 0],
+                        "3.25in": [40, 40, 0],
+                        "2.75in": [40, 40, 0]
+                    },
+                    "Traction_wheels": {
+                        "4in": [40, 40, 0],
+                        "3.25in": [40, 40, 0],
+                        "2.75in": [40, 40, 0]
+                    },
+                    "Mechanum_wheels": {
+                        "4in": [40, 40, 0],
+                        "2in": [40, 40, 0]
+                    }
                 },
-                "Mechanum_wheels": {
-                    "4in": [40, 40, 0],
-                    "2in": [40, 40, 0]
-                }
-            },
-            "Pneumatic_items": {
-                "Pneumatic_cylinders": {
-                    "75mm_cylinder": [0, 0, 0],
-                    "50mm_cylinder": [0, 0, 0],
-                    "25mm_cylinder": [0, 0, 0]
-                },
-                "Air_tank_200mL": [3, 0, 3],
-                "Pressure_regulation": {
-                    "Air_Pressure_Gauge": [2, 0, 2],
-                    "Air_Pressure_Regulator": [2, 0, 2],
-                    "Air_Pressure_Regulator_Mounting_Bracket": [2, 0, 2]
-                },
-                "Tubing_Cutter": [1, 1, 0],
-                "Solenoids": [4, 4, 0],
-                "Fittings": {
-                    "Shut_Off_Valve_Fitting": [3, 0, 30],
-                    "Elbow_Fittings": [],
-                    "Tee_Fittings": [],
-                    "Air_Flow_Valve_Fittings": [],
-                    "Straight_Male_Fittings": [],
-                    "Straight_Female_Fittings": [],
-                    "Valve_Stem": []
-                },
-                "Tubing&Plugs": {
-                    "4mm_Plugs": [10, 0, 10],
-                    "4mm_Tubing": [10, 0, 10]
+                "Pneumatic_items": {
+                    "Pneumatic_cylinders": {
+                        "75mm_cylinder": [0, 0, 0],
+                        "50mm_cylinder": [0, 0, 0],
+                        "25mm_cylinder": [0, 0, 0]
+                    },
+                    "Air_tank_200mL": [3, 0, 3],
+                    "Pressure_regulation": {
+                        "Air_Pressure_Gauge": [2, 0, 2],
+                        "Air_Pressure_Regulator": [2, 0, 2],
+                        "Air_Pressure_Regulator_Mounting_Bracket": [2, 0, 2]
+                    },
+                    "Tubing_Cutter": [1, 1, 0],
+                    "Solenoids": [4, 4, 0],
+                    "Fittings": {
+                        "Shut_Off_Valve_Fitting": [3, 0, 30],
+                        "Elbow_Fittings": [],
+                        "Tee_Fittings": [],
+                        "Air_Flow_Valve_Fittings": [],
+                        "Straight_Male_Fittings": [],
+                        "Straight_Female_Fittings": [],
+                        "Valve_Stem": []
+                    },
+                    "Tubing&Plugs": {
+                        "4mm_Plugs": [10, 0, 10],
+                        "4mm_Tubing": [10, 0, 10]
+                    }
                 }
             }
-        }
+        }  
 
         desfile_dict = {
             
         }
 
 
-        with open(deslockPath, 'x') as file:
+        with open(deslockPath, 'w+') as file:
             file.write("initialize")
         file.close()
 
-        with open(desfilePath, 'x') as file0:
-            json.dump(desfile_dict, file0, indent=4)
+        with open(desfilePath, 'w+') as file0:
+            json.dump(desfile_dict, file0, indent = 2)
         file0.close()
         
-        with open(jsonPath, 'x') as file1:
-            json.dump(currentinventory_dict, file1, indent=4)
+        with open(jsonPath, 'w+') as file1:
+            json.dump(currentinventory_dict, file1, indent = 2)
         file1.close()
         
-
     def writeJSONdesfile(id, subsequentData):
         desfilePath = storage_file_manipulation.desfilePath
         #write with sha256 id and the relevant json array data
@@ -163,8 +163,17 @@ class storage_file_manipulation:
             outfile.write(outDat + ", " + csvFile)
         outfile.close()
     
-    def read_index():
-        print("a")
+    def read_indice(knownIndice):
+        jsonPath = storage_file_manipulation.jsonPath
+        file = open(jsonPath, 'r')
+        fileData = json.loads(file.read())
+        for i in fileData[knownIndice]:
+            print(i)
+        file.close()
+
 
     def change_part_availibility():
         print("a")
+
+    def find_in_directory(fileName):
+        subprocess.run(["find", fileName])
